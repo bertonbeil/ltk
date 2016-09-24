@@ -1,0 +1,117 @@
+//
+// Name:           Material Shadows
+// Description:    Mixins for Material Design Shadows.
+// Version:        3.0.1
+//
+// Author:         Denis Malinochkin
+// Git:            https://github.com/mrmlnc/material-shadows
+//
+// twitter:        @mrmlnc
+//
+// ------------------------------------
+
+
+// Mixins
+// ------------------------------------
+
+@mixin z-depth-transition() {
+  transition: box-shadow .28s cubic-bezier(.4, 0, .2, 1);
+}
+
+@mixin z-depth-hover() {
+  -webkit-box-shadow: 0 3px 6px rgba(0,0,0,0.16),
+                      0 3px 6px rgba(0,0,0,0.23);
+          box-shadow: 0 3px 6px rgba(0,0,0,0.16),
+                      0 3px 6px rgba(0,0,0,0.23);
+}
+@mixin z-depth-focus() {
+  -webkit-box-shadow: 0 14px 28px rgba(0,0,0,0.25),
+                      0 10px 10px rgba(0,0,0,0.22);
+          box-shadow: 0 14px 28px rgba(0,0,0,0.25),
+                      0 10px 10px rgba(0,0,0,0.22);
+}
+
+@mixin z-depth-2dp() {
+  -webkit-box-shadow: 0 1px 3px rgba(0,0,0, 0.12),
+                      0 1px 2px rgba(0,0,0, 0.24);
+          box-shadow: 0 1px 3px rgba(0,0,0, 0.12),
+                      0 1px 2px rgba(0,0,0, 0.24);
+}
+
+@mixin z-depth-3dp() {
+  -webkit-box-shadow: 0 3px 6px rgba(0,0,0,0.16),
+                      0 3px 6px rgba(0,0,0,0.23);
+          box-shadow: 0 3px 6px rgba(0,0,0,0.16),
+                      0 3px 6px rgba(0,0,0,0.23);
+}
+
+@mixin z-depth-4dp() {
+  -webkit-box-shadow: 0 10px 20px rgba(0,0,0,0.19),
+                      0 6px 6px rgba(0,0,0,0.23);
+          box-shadow: 0 10px 20px rgba(0,0,0,0.19),
+                      0 6px 6px rgba(0,0,0,0.23);
+}
+
+@mixin z-depth-6dp() {
+  -webkit-box-shadow: 0 14px 28px rgba(0,0,0,0.25),
+                      0 10px 10px rgba(0,0,0,0.22);
+          box-shadow: 0 14px 28px rgba(0,0,0,0.25),
+                      0 10px 10px rgba(0,0,0,0.22);
+}
+
+@mixin z-depth-8dp() {
+  -webkit-box-shadow: 0 19px 38px rgba(0,0,0,0.30),
+                      0 15px 12px rgba(0,0,0,0.22);
+          box-shadow: 0 19px 38px rgba(0,0,0,0.30),
+                      0 15px 12px rgba(0,0,0,0.22);
+}
+
+
+@mixin z-depth($dp: 2) {
+  @if $dp == 2 {
+    @include z-depth-2dp();
+  } @else if $dp == 3 {
+    @include z-depth-3dp();
+  } @else if $dp == 4 {
+    @include z-depth-4dp();
+  } @else if $dp == 6 {
+    @include z-depth-6dp();
+  } @else if $dp == 8 {
+    @include z-depth-8dp();
+  } @else if $dp == 16 {
+    @include z-depth-16dp();
+  } @else if $dp == 24 {
+    @include z-depth-24dp();
+  }
+}
+
+
+// Class generator
+// ------------------------------------
+
+@mixin z-depth-classes($transition: false, $hover: false, $focus: false) {
+  @if $transition == true {
+    &-transition {
+      @include z-depth-transition();
+    }
+  }
+
+  @if $hover == true {
+    &-hover {
+      @include z-depth-hover();
+    }
+  }
+
+  @if $focus == true {
+    &-focus {
+      @include z-depth-focus();
+    }
+  }
+
+  // The available values for the shadow depth
+  @each $depth in 2, 3, 4, 6, 8 {
+    &-#{$depth}dp {
+      @include z-depth($depth);
+    }
+  }
+}
