@@ -1,15 +1,18 @@
 // main color palette
 $w: #fff;
+$white_1: #f9f9f9;
 $b: #000;
 $dark: #070507;
 $bur_0: #180E15;
 $bur_1: #2D1E26;
 $bur_2: #4A3247;
 $pink: #FF476A;
-
+$pink_light: #F36A71;
+$grey_1: #3b3f45;
 
 // other color's
-$h-bg: $bur_0;
+$h-bg: $grey_1;
+$m-bg: $pink_light;
 
 
 
@@ -19,3 +22,12 @@ $h-bg: $bur_0;
   $h-width: 100%;
   $h-padding: 20px;
   $h-margin: 0;
+
+  //menu
+  $m-height: 100%;
+  $m-width: 300px;
+  $m-top: 0;
+  $m-left: -300px;
+  $m-left_active: 0;
+  $m-padding: 150px 0 0 0;
+  $m-margin: 0;

@@ -1,18 +1,94 @@
 @import "https://fonts.googleapis.com/css?family=Roboto:100,300,400,700&subset=cyrillic-ext";
-/*shadow*/
-/* line 6, ../sass/main.scss */
-body {
-  font-family: Roboto, sans-serif;
+@import "https://fonts.googleapis.com/css?family=Raleway:100,400,500,700,900";
+/* line 7, ../sass/main.scss */
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
 }
 
-/* line 10, ../sass/main.scss */
-header.h {
-  position: relative;
+/* line 13, ../sass/main.scss */
+html, body {
+  height: 100%;
+}
+
+/* line 17, ../sass/main.scss */
+::-webkit-scrollbar {
+  display: none;
+}
+
+/* line 20, ../sass/main.scss */
+::scrollbar {
+  display: none;
+}
+
+/* line 24, ../sass/main.scss */
+body {
+  max-height: 100vh;
+  overflow-x: hidden;
+  overflow-y: scroll;
+}
+
+/* line 31, ../sass/main.scss */
+.header {
+  position: fixed;
+  top: 0;
   height: 100px;
   width: 100%;
-  background-color: #180E15;
+  background-color: #3b3f45;
   padding: 20px;
   margin: 0;
   -webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+  z-index: 95;
+}
+
+/* line 44, ../sass/main.scss */
+.content {
+  position: relative;
+  height: 100vh;
+  width: 100%;
+  background: url(../img/bg/LTK_pic_1.jpg) no-repeat center center;
+  background-size: cover;
+}
+
+/* line 53, ../sass/main.scss */
+.menu {
+  position: absolute;
+  height: 100%;
+  width: 300px;
+  top: 0;
+  left: -300px;
+  padding: 150px 0 0 0;
+  background-color: #F36A71;
+  z-index: 94;
+  -webkit-transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+/* line 63, ../sass/main.scss */
+.menu__open {
+  left: 0;
+}
+/* line 66, ../sass/main.scss */
+.menu__list {
+  list-style-type: none;
+  padding: 0;
+}
+/* line 70, ../sass/main.scss */
+.menu__item {
+  line-height: 100px;
+  text-align: left;
+  padding-left: 50px;
+  color: #fffce1;
+  font-family: Raleway;
+  font-size: 40px;
+  cursor: pointer;
+  -webkit-transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+/* line 79, ../sass/main.scss */
+.menu__item:hover {
+  padding-left: 60px;
+  font-size: 42px;
+  background: rgba(255, 255, 255, 0.2);
 }
