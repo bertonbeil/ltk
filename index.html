@@ -1,77 +1,118 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8">
-  <title>Ltk</title>
-  <link rel="stylesheet" href="./css/main.css">
-  <link rel="stylesheet" href="./bower_components/normalize-css/normalize.css">
-  <link rel="stylesheet" href="./bower_components/css-hamburgers/dist/hamburgers.css">
+    <meta charset="UTF-8">
+    <title>Ltk</title>
+
+    <link rel="stylesheet" href="./css/audioplayer.css">
+    <link rel="stylesheet" href="./bower_components/normalize-css/normalize.css">
+    <link rel="stylesheet" href="./bower_components/css-hamburgers/dist/hamburgers.css">
+    <link rel="stylesheet" href="./css/main.css">
+    <script>
+        (function(doc) {
+            var addEvent = 'addEventListener',
+                type = 'gesturestart',
+                qsa = 'querySelectorAll',
+                scales = [1, 1],
+                meta = qsa in doc ? doc[qsa]('meta[name=viewport]') : [];
+
+            function fix() {
+                meta.content = 'width=device-width,minimum-scale=' + scales[0] + ',maximum-scale=' + scales[1];
+                doc.removeEventListener(type, fix, true);
+            }
+            if ((meta = meta[meta.length - 1]) && addEvent in doc) {
+                fix();
+                scales = [.25, 1.6];
+                doc[addEvent](type, fix, true);
+            }
+        }(document));
+    </script>
 </head>
+
 <body>
 
 
-<!-- head panel -->
-<header class="header">
-  <button class="hamburger hamburger--spin" type="button">
-    <span class="hamburger-box">
+    <!-- head panel -->
+    <header class="header">
+        <button class="hamburger hamburger--spin" type="button">
+            <span class="hamburger-box">
       <span class="hamburger-inner"></span>
-    </span>
-  </button>
-</header>
-<!--// head panel -->
+            </span>
+        </button>
+    </header>
+    <!--// head panel -->
 
-<!-- side-menu(nav-bar) -->
-<div class="menu">
-  <ul class="menu__list">
-    <li class="menu__item">Music</li>
-    <li class="menu__item">Video</li>
-    <li class="menu__item">Events</li>
-    <li class="menu__item">LTK</li>
-  </ul>
-</div>
-<!--// side-menu(nav-bar) -->
+    <!-- side-menu(nav-bar) -->
+    <div class="menu">
+        <ul class="menu__list">
+            <li class="menu__item">Music</li>
+            <li class="menu__item">Video</li>
+            <li class="menu__item">Events</li>
+            <li class="menu__item">LTK</li>
+        </ul>
+    </div>
+    <!--// side-menu(nav-bar) -->
 
-<!-- blur -->
-<div id="open-blur">
-<!-- main-content -->
-<section class="content">
+    <!-- blur -->
+    <div id="open-blur">
+        <!-- main-content -->
+        <section class="content">
 
-</section>
-<!--// main-content -->
-</div>
-<!--// blur  -->
+        </section>
+        <!--// main-content -->
+    </div>
+    <!--// blur  -->
 
-<!-- player(footer) -->
-<footer>
-   <!-- player -->
-   <!--// player -->
-</footer>
-<!--// player(footer) -->
-<!-- script's -->
-  <!-- lib's -->
-<script src="./bower_components/jquery/dist/jquery.js"></script>
+    <!-- player(footer) -->
+    <footer class="footer">
+        <div class="footer_container">
+            <!-- player -->
+            <div class="ltk-player audioplayer">
+              <audio preload="auto" controls="" style="width: 0px; height: 0px; visibility: hidden;">
+                <source src="audio/BlueDucks_FourFlossFiveSix.mp3">
+                <source src="audio/BlueDucks_FourFlossFiveSix.ogg">
+                <source src="audio/BlueDucks_FourFlossFiveSix.wav">
+              </audio>
+            </div>
+            <!--// player -->
+        </div>
+    </footer>
+    <!--// player(footer) -->
+    <!-- script's -->
+    <!-- lib's -->
+    <script src="./bower_components/jquery/dist/jquery.js"></script>
 
-<!--  -->
-<script>
-    var polyfilter_scriptpath = './js/plugins/';
-</script>
+    <!-- blur -->
+    <script>
+        var polyfilter_scriptpath = './js/plugins/';
+    </script>
+    <script src="./js/plugins/css-filters-polyfill.js"></script>
+    <script src="./js/plugins/cssParser.js"></script>
 
+    <svg width="0" height="0" style="position:absolute">
+        <filter id="blur4px">
+            <feGaussianBlur in="SourceGraphic" stdDeviation="4"></feGaussianBlur>
+        </filter>
+    </svg>
+    <!--// blur -->
+    <!-- player -->
+    <script src="./js/plugins/audioplayer.js"></script>
+    <script>
+        $( function()
+        {
+            $( 'audio' ).audioPlayer();
+        });
+    </script>
+    <div class="attribution">
+        <div xmlns:cc="http://creativecommons.org/ns#" xmlns:dct="http://purl.org/dc/terms/" about="http://freemusicarchive.org/music/Blue_Ducks/Six/">
+            <span property="dct:title">Six</span> (<a rel="cc:attributionURL" property="cc:attributionName" href="http://freemusicarchive.org/music/Blue_Ducks/">Blue Ducks</a>) / <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/">CC BY-NC-SA 3.0</a>
+        </div>
+    </div>
+    <!--// player -->
 
-<script src="./js/plugins/css-filters-polyfill.js"></script>
-<!-- <script src="./js/plugins/css-filters-polyfill-parser.js"></script> -->
-<script src="./js/plugins/cssParser.js"></script>
-
-
-
-<!-- blur -->
-  <svg width="0" height="0" style="position:absolute">
-      <filter id="blur4px">
-          <feGaussianBlur in="SourceGraphic" stdDeviation="4"></feGaussianBlur>
-      </filter>
-  </svg>
-<!--// blur -->
-
-<script src="./js/main.js"></script>
-<!--// script's -->
+    <script src="./js/main.js"></script>
+    <!--// script's -->
 </body>
+
 </html>
