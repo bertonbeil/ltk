@@ -29,7 +29,17 @@ body {
   overflow-y: scroll;
 }
 
-/* line 31, ../sass/main.scss */
+/* line 29, ../sass/main.scss */
+#open-blur {
+  position: fixed;
+  right: -10px;
+  left: -10px;
+  bottom: -20px;
+  background: transparent;
+  z-index: 93;
+}
+
+/* line 46, ../sass/main.scss */
 .header {
   position: fixed;
   top: 0;
@@ -43,7 +53,7 @@ body {
   z-index: 95;
 }
 
-/* line 44, ../sass/main.scss */
+/* line 59, ../sass/main.scss */
 .content {
   position: relative;
   height: 100vh;
@@ -52,7 +62,7 @@ body {
   background-size: cover;
 }
 
-/* line 53, ../sass/main.scss */
+/* line 68, ../sass/main.scss */
 .menu {
   position: absolute;
   height: 100%;
@@ -65,16 +75,16 @@ body {
   -webkit-transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
-/* line 63, ../sass/main.scss */
+/* line 78, ../sass/main.scss */
 .menu__open {
   left: 0;
 }
-/* line 66, ../sass/main.scss */
+/* line 81, ../sass/main.scss */
 .menu__list {
   list-style-type: none;
   padding: 0;
 }
-/* line 70, ../sass/main.scss */
+/* line 85, ../sass/main.scss */
 .menu__item {
   line-height: 100px;
   text-align: left;
@@ -86,9 +96,26 @@ body {
   -webkit-transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
-/* line 79, ../sass/main.scss */
+/* line 94, ../sass/main.scss */
 .menu__item:hover {
   padding-left: 60px;
   font-size: 42px;
   background: rgba(255, 255, 255, 0.2);
+}
+
+/* line 103, ../sass/main.scss */
+footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 200px;
+  width: 100%;
+  background-image: -webkit-linear-gradient(45deg, #d4145a, #fbb03b);
+  background-image: linear-gradient(45deg, #d4145a, #fbb03b);
+  z-index: 99;
+  -webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+  -webkit-transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }

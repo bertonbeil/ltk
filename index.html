@@ -9,9 +9,10 @@
 </head>
 <body>
 
+
 <!-- head panel -->
 <header class="header">
-  <button class="hamburger hamburger--spin is-active" type="button">
+  <button class="hamburger hamburger--spin" type="button">
     <span class="hamburger-box">
       <span class="hamburger-inner"></span>
     </span>
@@ -20,7 +21,7 @@
 <!--// head panel -->
 
 <!-- side-menu(nav-bar) -->
-<div class="menu menu__open">
+<div class="menu">
   <ul class="menu__list">
     <li class="menu__item">Music</li>
     <li class="menu__item">Video</li>
@@ -30,20 +31,45 @@
 </div>
 <!--// side-menu(nav-bar) -->
 
+<!-- blur -->
+<div id="open-blur">
 <!-- main-content -->
 <section class="content">
 
 </section>
 <!--// main-content -->
+</div>
+<!--// blur  -->
 
 <!-- player(footer) -->
 <footer>
-
+   <!-- player -->
+   <!--// player -->
 </footer>
 <!--// player(footer) -->
 <!-- script's -->
   <!-- lib's -->
 <script src="./bower_components/jquery/dist/jquery.js"></script>
+
+<!--  -->
+<script>
+    var polyfilter_scriptpath = './js/plugins/';
+</script>
+
+
+<script src="./js/plugins/css-filters-polyfill.js"></script>
+<!-- <script src="./js/plugins/css-filters-polyfill-parser.js"></script> -->
+<script src="./js/plugins/cssParser.js"></script>
+
+
+
+<!-- blur -->
+  <svg width="0" height="0" style="position:absolute">
+      <filter id="blur4px">
+          <feGaussianBlur in="SourceGraphic" stdDeviation="4"></feGaussianBlur>
+      </filter>
+  </svg>
+<!--// blur -->
 
 <script src="./js/main.js"></script>
 <!--// script's -->
