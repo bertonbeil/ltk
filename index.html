@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="./css/audioplayer.css">
     <link rel="stylesheet" href="./bower_components/normalize-css/normalize.css">
     <link rel="stylesheet" href="./bower_components/css-hamburgers/dist/hamburgers.css">
+    <link rel="stylesheet" href="./css/swiper.css">
     <link rel="stylesheet" href="./css/main.css">
     <script>
         (function(doc) {
@@ -32,6 +33,19 @@
 
 <body>
 
+<!-- background video -->
+<div class="Vidage">
+    <div class="Vidage__image"></div>
+
+    <video id="VidageVideo" class="Vidage__video" preload="metadata" loop autoplay muted>
+        <source src="videos/bg.webm" type="video/webm">
+        <source src="video/bg_1.mp4" type="video/mp4">
+    </video>
+
+    <div class="Vidage__backdrop"></div>
+</div>
+<!--// background video -->
+
 
     <!-- head panel -->
     <header class="header">
@@ -46,26 +60,42 @@
     <!-- side-menu(nav-bar) -->
     <div class="menu">
         <ul class="menu__list">
-            <li class="menu__item">Music</li>
-            <li class="menu__item">Video</li>
-            <li class="menu__item">Events</li>
-            <li class="menu__item">LTK</li>
+            <li class="menu__item">Музика</li>
+            <li class="menu__item">Відео</li>
+            <li class="menu__item">Події</li>
+            <li class="menu__item">ЛТК</li>
         </ul>
     </div>
     <!--// side-menu(nav-bar) -->
 
-    <!-- blur -->
-    <div id="open-blur">
-        <!-- main-content -->
-        <section class="content">
+    <!-- main-content -->
+    <section class="content">
+        <div class="swiper-container">
+            <!-- slider wrapper -->
+            <div class="swiper-wrapper">
+                <!-- Slides 1-->
+                <div class="swiper-slide">
+                    <h2  class="h-text">Йоу! <br> Ви на гостьовій сторінці покорювачів танцполів та випивання горілки <br> </h2>
+                </div>
+                <!-- Slide 2 -->
+                <div class="swiper-slide">
+                    <h2  class="h-text">Text</h2>
+                </div>
+                <div class="swiper-slide">Slide 3</div>
+            </div>
 
-        </section>
+            <!-- If we need pagination -->
+            <div class="swiper-pagination"></div>
+
+            <!-- If we need scrollbar -->
+            <div class="swiper-scrollbar"></div>
+        </div>
+    </section>
+
         <!--// main-content -->
-    </div>
-    <!--// blur  -->
 
     <!-- player(footer) -->
-    <footer class="footer">
+    <footer class="footer footer__close">
         <div class="footer_container">
             <!-- player -->
             <div class="ltk-player audioplayer">
@@ -104,13 +134,26 @@
             $( 'audio' ).audioPlayer();
         });
     </script>
-    <div class="attribution">
+    <!-- <div class="attribution">
         <div xmlns:cc="http://creativecommons.org/ns#" xmlns:dct="http://purl.org/dc/terms/" about="http://freemusicarchive.org/music/Blue_Ducks/Six/">
             <span property="dct:title">Six</span> (<a rel="cc:attributionURL" property="cc:attributionName" href="http://freemusicarchive.org/music/Blue_Ducks/">Blue Ducks</a>) / <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/">CC BY-NC-SA 3.0</a>
         </div>
-    </div>
+    </div> -->
     <!--// player -->
+    <!-- background video -->
+    <script src="./js/plugins/Vidage.min.js"></script>
+    <script>
+        new Vidage('#VidageVideo');
+    </script>
+    <!--// background video -->
+    <!-- slider -->
+    <script src="./js/plugins/swiper.min.js"></script>
+    <script>
 
+    var swiper = new Swiper('.swiper-container');
+
+    </script>
+    <!--// slider -->
     <script src="./js/main.js"></script>
     <!--// script's -->
 </body>

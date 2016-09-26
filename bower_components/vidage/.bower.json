@@ -1,0 +1,46 @@
+{
+  "name": "vidage",
+  "description": "Your solution to full-screen background video and image combined.",
+  "main": [
+    "src/styles/Vidage.scss",
+    "dist/scripts/Vidage.min.js"
+  ],
+  "moduleType": [
+    "amd",
+    "node",
+    "es6"
+  ],
+  "authors": [
+    "dvL-den <n.dvLden@gmail.com> (http://dvL-den.net)"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git://github.com:dvLden/Vidage.js.git"
+  },
+  "license": "MIT",
+  "keywords": [
+    "vidage",
+    "full-screen",
+    "video",
+    "image",
+    "background"
+  ],
+  "homepage": "https://github.com/dvLden/Vidage.js",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "_release": "04d45aa543",
+  "_resolution": {
+    "type": "branch",
+    "branch": "master",
+    "commit": "04d45aa5439f4f40ec63964ce560beda49fe5547"
+  },
+  "_source": "https://github.com/dvLden/Vidage.git",
+  "_target": "*",
+  "_originalSource": "vidage",
+  "_direct": true
+}

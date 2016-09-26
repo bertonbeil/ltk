@@ -1,35 +1,42 @@
-@import "https://fonts.googleapis.com/css?family=Roboto:100,300,400,700&subset=cyrillic-ext";
-@import "https://fonts.googleapis.com/css?family=Raleway:100,400,500,700,900";
-/* line 7, ../sass/main.scss */
+@import "https://fonts.googleapis.com/css?family=Roboto+Slab:100,400,700&subset=cyrillic-ext";
+/* line 8, ../sass/main.scss */
 * {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
 }
 
-/* line 13, ../sass/main.scss */
+/* line 14, ../sass/main.scss */
 html, body {
   height: 100%;
 }
 
-/* line 17, ../sass/main.scss */
+/* line 18, ../sass/main.scss */
 ::-webkit-scrollbar {
   display: none;
 }
 
-/* line 20, ../sass/main.scss */
+/* line 21, ../sass/main.scss */
 ::scrollbar {
   display: none;
 }
 
-/* line 24, ../sass/main.scss */
+/* line 25, ../sass/main.scss */
 body {
   max-height: 100vh;
   overflow-x: hidden;
   overflow-y: scroll;
+  background: #000;
 }
 
-/* line 29, ../sass/main.scss */
+/* line 32, ../sass/main.scss */
+.has-blur {
+  -webkit-filter: blur(4px);
+  -moz-filter: blur(4px);
+  filter: blur(4px);
+}
+
+/* line 38, ../sass/main.scss */
 #open-blur {
   position: fixed;
   right: -10px;
@@ -39,30 +46,74 @@ body {
   z-index: 93;
 }
 
-/* line 46, ../sass/main.scss */
+/* line 48, ../sass/main.scss */
 .header {
   position: fixed;
-  top: 0;
+  top: -100px;
   height: 100px;
   width: 100%;
-  background-color: #3b3f45;
+  background-color: #1A1B1C;
   padding: 20px;
   margin: 0;
   -webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
   z-index: 95;
+  -webkit-transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+/* line 59, ../sass/main.scss */
+.header__active {
+  top: 0px;
 }
 
-/* line 59, ../sass/main.scss */
+/* line 65, ../sass/main.scss */
 .content {
   position: relative;
   height: 100vh;
   width: 100%;
-  background: url(../img/bg/LTK_pic_1.jpg) no-repeat center center;
-  background-size: cover;
+  left: -100%;
+  -webkit-transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+/* line 71, ../sass/main.scss */
+.content__under {
+  -webkit-transform: translateX(300px);
+  transform: translateX(300px);
 }
 
-/* line 68, ../sass/main.scss */
+/* line 77, ../sass/main.scss */
+.slide {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  bottom: 0;
+  -webkit-transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+/* line 84, ../sass/main.scss */
+.slide__active {
+  left: 0;
+}
+/* line 87, ../sass/main.scss */
+.slide .intro-text {
+  font-size: 80px;
+  font-family: 'Roboto Slab', serif;
+  text-align: center;
+  padding: 50px;
+  color: #fff;
+}
+
+/* line 98, ../sass/main.scss */
+.swiper-slide .h-text {
+  font-size: 80px;
+  font-family: 'Roboto Slab', serif;
+  text-align: center;
+  padding: 50px;
+  color: #fff;
+}
+
+/* line 108, ../sass/main.scss */
 .menu {
   position: absolute;
   height: 100%;
@@ -70,40 +121,39 @@ body {
   top: 0;
   left: -300px;
   padding: 150px 0 0 0;
-  background-color: #F36A71;
+  background-color: #212121;
   z-index: 94;
   -webkit-transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
-/* line 78, ../sass/main.scss */
+/* line 118, ../sass/main.scss */
 .menu__open {
   left: 0;
 }
-/* line 81, ../sass/main.scss */
+/* line 121, ../sass/main.scss */
 .menu__list {
   list-style-type: none;
   padding: 0;
 }
-/* line 85, ../sass/main.scss */
+/* line 125, ../sass/main.scss */
 .menu__item {
   line-height: 100px;
   text-align: left;
-  padding-left: 50px;
+  padding-left: 30px;
   color: #fffce1;
-  font-family: Raleway;
-  font-size: 40px;
+  font-family: 'Roboto Slab', serif;
+  font-size: 35px;
   cursor: pointer;
   -webkit-transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
-/* line 94, ../sass/main.scss */
+/* line 134, ../sass/main.scss */
 .menu__item:hover {
   padding-left: 60px;
-  font-size: 42px;
   background: rgba(255, 255, 255, 0.2);
 }
 
-/* line 103, ../sass/main.scss */
+/* line 142, ../sass/main.scss */
 .footer {
   position: fixed;
   bottom: 0;
@@ -112,15 +162,96 @@ body {
   height: 200px;
   width: 100%;
   padding: 10px;
-  background-image: -webkit-linear-gradient(45deg, #d4145a, #fbb03b);
-  background-image: linear-gradient(45deg, #d4145a, #fbb03b);
+  background: #1A1B1C;
   z-index: 99;
   -webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
-  -webkit-transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  -webkit-transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
 }
-/* line 116, ../sass/main.scss */
+/* line 154, ../sass/main.scss */
+.footer__open {
+  bottom: 0;
+}
+/* line 157, ../sass/main.scss */
+.footer__close {
+  bottom: -200px;
+}
+/* line 160, ../sass/main.scss */
+.footer__mini {
+  height: 50px;
+  padding: 0;
+}
+/* line 164, ../sass/main.scss */
+.footer__mini .ltk-player {
+  height: 50px;
+}
+/* line 167, ../sass/main.scss */
+.footer__mini .audioplayer-playpause {
+  top: 0;
+  left: 0;
+  width: 25px;
+  height: 25px;
+  margin-top: 11px;
+}
+/* line 174, ../sass/main.scss */
+.footer__mini .audioplayer-time {
+  top: 20px;
+  font-size: 16px;
+}
+/* line 179, ../sass/main.scss */
+.footer__mini .audioplayer-bar {
+  bottom: 10px;
+  height: 6px;
+  width: 100%;
+  left: 0;
+}
+/* line 186, ../sass/main.scss */
+.footer__mini .audioplayer-bar-played:after {
+  content: "";
+  position: absolute;
+  top: -5px;
+  right: -3px;
+  width: 15px;
+  height: 15px;
+  border-radius: 3px;
+  background: #fff;
+}
+/* line 196, ../sass/main.scss */
+.footer__mini .audioplayer-time-current {
+  left: 0;
+}
+/* line 199, ../sass/main.scss */
+.footer__mini .audioplayer-time-duration {
+  right: 0;
+}
+/* line 202, ../sass/main.scss */
+.footer__mini .audioplayer-volume {
+  width: 25px;
+  height: 25px;
+  margin-top: -13px;
+  right: 0;
+}
+/* line 208, ../sass/main.scss */
+.footer__mini .audioplayer-volume:hover .audioplayer-volume-adjust {
+  top: -70px;
+}
+/* line 211, ../sass/main.scss */
+.footer__mini .audioplayer-volume-adjust {
+  right: -7px;
+  height: 160px;
+  padding-bottom: 30px;
+}
+/* line 216, ../sass/main.scss */
+.footer__mini .audioplayer-time-current {
+  font-weight: 100;
+  color: #fff;
+}
+/* line 220, ../sass/main.scss */
+.footer__mini .footer_container {
+  max-width: 700px;
+}
+/* line 224, ../sass/main.scss */
 .footer_container {
   display: block;
   position: relative;
@@ -129,9 +260,72 @@ body {
   margin: 0 auto;
 }
 
-/* line 125, ../sass/main.scss */
+/* line 233, ../sass/main.scss */
 .ltk-player {
   position: relative;
   height: 100%;
   width: 100%;
+}
+
+/* line 242, ../sass/main.scss */
+.Vidage__image, .Vidage__backdrop {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+
+/* line 250, ../sass/main.scss */
+.Vidage--allow .Vidage__video {
+  display: block;
+}
+
+/* line 254, ../sass/main.scss */
+.Vidage--allow .Vidage__image {
+  display: none;
+}
+
+/* line 258, ../sass/main.scss */
+.Vidage {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  min-width: 100%;
+  min-height: 100%;
+  z-index: -1;
+  -webkit-transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+  opacity: 0;
+}
+
+/* line 273, ../sass/main.scss */
+.Vidage__video {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+  -webkit-transform: translateX(-50%) translateY(-50%);
+  transform: translateX(-50%) translateY(-50%);
+  display: none;
+}
+
+/* line 286, ../sass/main.scss */
+.Vidage__image {
+  background-image: url("../images/bg.jpg");
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+/* line 293, ../sass/main.scss */
+.Vidage__backdrop {
+  background-color: #1b1c1d;
+  background-image: url();
+  opacity: 0.2;
 }

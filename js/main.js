@@ -1,10 +1,9 @@
 jQuery(document).ready( main() );
 
-
 function main() {
   var menuBtn = $('button.hamburger'),
       sideMenu = $('div.menu'),
-      blur = $('#open-blur');
+      blur = $('.Vidage');
 
   menuBtn.on('click', function() {
 
@@ -46,5 +45,59 @@ function main() {
           .css('oFilter', filterVal)
           .css('msFilter', filterVal);
   }
+
+  function contentOn() {
+      var content = $('section.content');
+
+      onBlur(content);
+      conten.addClass('content__under');
+  }
+
+  // intro fade
+  function introVideo() {
+      var bgVideo = $('.Vidage');
+          bgVideo.css('opacity', '1');
+  }
+
+  // blur
+  function onBlur(elem) {
+      this.e = elem;
+      this.$elem = $(elem);
+      console.log($elem);
+      $elem.addClass('has-blur')
+  }
+
+
+  // inro
+  function intro () {
+    var header = $('header'),
+        content = $('section.content'),
+        player = $('footer'),
+        menuBtn = $('button.hamburger'),
+        sideMenu = $('div.menu'),
+        video = $('.Vidage');
+
+        setTimeout(function () {
+
+            introVideo();
+        }, 400);
+
+        setTimeout(function () {
+            onBlur(video);
+            video.addClass('is-open');
+            header.addClass('header__active');
+            player.removeClass('footer__close')
+                  .addClass('footer__mini');
+
+            setTimeout(function () {
+                menuBtn.addClass('is-active');
+                sideMenu.addClass('menu__open');
+                contentOn();
+            }, 300);
+        }, 4000);
+    console.debug(player);
+  }
+  intro();
+
 
 }
